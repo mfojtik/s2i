@@ -15,6 +15,6 @@ s2i             latest              9946af46dac5        7 minutes ago       17.1
 ## Usage
 
 ```console
-docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged \
-  s2i build --loglevel=5 https://github.com/mfojtik/sample-app openshift/ruby-22-centos7 sample-app
+docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged --net="host" \
+  s2i build git://github.com/mfojtik/sample-app openshift/ruby-22-centos7 sample-app
 ```
